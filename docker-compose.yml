@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ./backend_app  # Spécifie le chemin vers backend_app
+      dockerfile: Dockerfile  # Indique le nom du Dockerfile
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build:
+      context: ./frontend  # Répertoire du frontend
+      dockerfile: Dockerfile  # Fichier Docker du frontend
+    ports:
+      - "4200:80"  # Le port 80 du conteneur Nginx sera mappé au port 4200 de ta machine
+    depends_on:
+      - app  # S'assurer que le backend est démarré avant le frontend

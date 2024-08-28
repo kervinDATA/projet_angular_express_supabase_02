@@ -1,0 +1,13 @@
+<div *ngIf="listing">
+    <h1>Détails du listing</h1>
+    <p><strong>Nom de l'hôte:</strong> {{ listing.host_name }}</p>
+    <p><strong>Description:</strong> {{ listing.description }}</p>
+    <p><strong>Type de chambre:</strong> {{ listing.room_type }}</p>
+    <p><strong>Quartier:</strong> {{ listing.area }}</p>
+    <p><strong>Prix:</strong> {{ listing.price }}</p>
+    <p><strong>Nombre de nuits minimum:</strong> {{ listing.minimum_nights }}</p>
+    <p><strong>Disponibilité (365 jours):</strong> {{ listing.availability_365 }}</p>
+    <p><strong>Nombre de reviews:</strong> {{ listing.number_of_reviews }}</p>
+    <p><strong>Reviews par mois:</strong> {{ listing.reviews_per_month }}</p>
+  </div>
+  

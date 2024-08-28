@@ -1,0 +1,66 @@
+<div class="listing-container">
+  <a [routerLink]="['/add-listing']">Ajouter un nouveau listing</a>
+
+  <!-- Barre de recherche -->
+  <div>
+    <label for="search">Rechercher par nom :</label>
+    <input type="text" id="search" [(ngModel)]="searchTerm" placeholder="Tapez un nom..." />
+    <button (click)="searchListings()">Rechercher</button>
+  </div>
+
+  <!-- Filtres : Quartier et Type de chambre -->
+  <div>
+    <label for="neighbourhood">Filtrer par quartier :</label>
+    <select id="neighbourhood" [(ngModel)]="selectedNeighbourhood">
+      <option value="">Tous les quartiers</option>
+      <option *ngFor="let neighbourhood of neighbourhoods" [value]="neighbourhood">
+        {{ neighbourhood }}
+      </option>
+    </select>
+
+    <label for="roomType">Filtrer par type de chambre :</label>
+    <select id="roomType" [(ngModel)]="selectedRoomType">
+      <option value="">Tous les types</option>
+      <option *ngFor="let roomType of roomTypes" [value]="roomType">
+        {{ roomType }}
+      </option>
+    </select>
+
+    <!-- Ajout des champs pour la fourchette de prix -->
+    <label for="minPrice">Prix minimum :</label>
+    <input type="number" id="minPrice" [(ngModel)]="minPrice" placeholder="Prix min" />
+
+    <label for="maxPrice">Prix maximum :</label>
+    <input type="number" id="maxPrice" [(ngModel)]="maxPrice" placeholder="Prix max" />
+
+
+    <button (click)="filterListings()">Filtrer</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Quartier</th>
+        <th>Type de chambre</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listing of listings">
+        <td>
+          <a [routerLink]="['/listing', listing.listing_id]">{{ listing.host_name }}</a>
+        </td>
+        <td>{{ listing.area }}</td>
+        <td>{{ listing.room_type }}</td>
+        <td>{{ listing.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Boutons de pagination -->
+  <button (click)="previousPage()" [disabled]="currentPage === 0">Précédent</button>
+  <button (click)="nextPage()">Suivant</button>
+</div>
+
+  

@@ -1,0 +1,59 @@
+<h2>Ajouter un nouveau listing</h2>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="listing_id">ID du listing</label>
+    <input type="number" id="listing_id" name="listing_id" [(ngModel)]="listing.listing_id" required>
+  </div>
+
+  <div>
+    <label for="host_id">ID de l'hôte</label>
+    <input type="number" id="host_id" name="host_id" [(ngModel)]="listing.host_id" required>
+  </div>
+
+  <div>
+    <label for="host_name">Nom de l'hôte</label>
+    <input type="text" id="host_name" name="host_name" [(ngModel)]="listing.host_name" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" [(ngModel)]="listing.description" required></textarea>
+  </div>
+
+  <div>
+    <label for="room_type">Type de chambre</label>
+    <input type="text" id="room_type" name="room_type" [(ngModel)]="listing.room_type" required>
+  </div>
+
+  <div>
+    <label for="area">Quartier</label>
+    <input type="text" id="area" name="area" [(ngModel)]="listing.area" required>
+  </div>
+
+  <div>
+    <label for="price">Prix</label>
+    <input type="number" id="price" name="price" [(ngModel)]="listing.price" required>
+  </div>
+
+  <div>
+    <label for="minimum_nights">Nombre de nuits minimum</label>
+    <input type="number" id="minimum_nights" name="minimum_nights" [(ngModel)]="listing.minimum_nights" required>
+  </div>
+
+  <div>
+    <label for="availability_365">Disponibilité (365 jours)</label>
+    <input type="number" id="availability_365" name="availability_365" [(ngModel)]="listing.availability_365" required>
+  </div>
+
+  <div>
+    <label for="number_of_reviews">Nombre de commentaires</label>
+    <input type="number" id="number_of_reviews" name="number_of_reviews" [(ngModel)]="listing.number_of_reviews" required>
+  </div>
+
+  <div>
+    <label for="reviews_per_month">Commentaires par mois</label>
+    <input type="number" step="0.01" id="reviews_per_month" name="reviews_per_month" [(ngModel)]="listing.reviews_per_month" required>
+  </div>
+
+  <button type="submit">Ajouter</button>
+</form>

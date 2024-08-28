@@ -1,0 +1,61 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+*.log
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.yaml
+.dockerignore
+
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Dist folder for build output
+dist/
+
+# Production
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Test coverage
+coverage/
+
+# Debug files
+.vscode/
+.idea/
+
+# Local Environment Settings
+*.local
+
+# Ignore yarn.lock and package-lock.json if you're using npm or yarn exclusively
+# Comment out or remove the one you're using.
+package-lock.json
+yarn.lock
+
+# Supabase local data
+supabase-data/
